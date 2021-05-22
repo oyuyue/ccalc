@@ -1,12 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>中文计算器</title>
+  <style>
+    html {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #18191a;
+      font-size: 22px;
+      background: #18191a;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .inp_container, #nums, #units, #ops {
+      display: flex;
+      white-space: nowrap;
+      flex-wrap: wrap;
+    }
+    .inp_container {
+      align-items: stretch;
+    }
+    .inp_container input {
+      flex: 1;
+      font-size: 22px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 0;
+      outline: 0;
+    }
+    .flex-center {
+      display: flex;
+      align-items: center;
+    }
+    .record {
+      font-size: 24px;
+      margin: 10px 0;
+      padding: 10px;
+      color: #ffcc99;
+      background: #2a2734;
+    }
+    .record_time {
+      margin-right: 20px;
+      color: #9683f6;
+    }
+    .record_ans {
+      margin-top: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .btn {
+      padding: 3px 10px;
+      cursor: pointer;
+      background: #6c69a0;
+    }
+    a {
+      display: block;
+      padding-top: 5.5px !important;
+      color: #ffcc99;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  
+  <div class="container">
+    <div class="inp_container">
+      <input id="inp" />
+      <div id="equal" class="btn">等于</div>
+      <div id="clear" class="btn">清除</div>
+      <a class="btn" target="_blank" href="https://github.com/woopen/ccalc">GITHUB</a>
+    </div>
+    <div>
+      <div id="nums"></div>
+      <div id="units"></div>
+      <div id="ops"></div>
+    </div>
+    <div id="records"></div>
+  </div>
+  <script src="./dist/index.min.js"></script>
 </body>
 </html>

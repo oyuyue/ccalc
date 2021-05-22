@@ -30,6 +30,7 @@ function isUnit(ch) {
 }
 
 export function chineseToArabic(str) {
+  if (!isNaN(Number(str))) return Number(str)
   let value = str.replace(/^零*/, "");
   const ch1 = value[0];
   if (!ch1) return 0;
@@ -93,6 +94,8 @@ export function chineseToArabic(str) {
 
 export function arabicToChinese(num) {
   if (num === 0) return '零';
+  if (isNaN(num)) return '不是数字'
+  if (!isFinite(num)) return '无限'
   num = Math.round(num);
   if (isNaN(num) || !num) return "不是数字";
   let isNeg = false;
