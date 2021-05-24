@@ -35,12 +35,18 @@ window.onload = function() {
     if (!inp.value) return;
     const record = document.createElement('div')
     record.classList.add('record')
+    let ret = ''
+    try {
+      ret = calc(inp.value)
+    } catch (err) {
+      ret = err
+    }
     record.innerHTML = `
       <div class="flex-center">
         <div class="record_time">${new Date().toLocaleString()}</div>
         <div>${inp.value}</div>
       </div>
-      <div class="record_ans">${calc(inp.value)}</div>
+      <div class="record_ans">${ret}</div>
     `
     records.insertBefore(record, lastRecord)
     lastRecord = record
